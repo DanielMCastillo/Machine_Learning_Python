@@ -19,7 +19,7 @@ def remove_outliers_with_zscore(df,column,threshold=2):
 
 #funcion para mapear datos
 def map_column_values(df,column, mapping_dict):
-    df[column] = df[column].apply(lambda value: mapping_dict.get(value.lower().strip(),np.nan) if value is not np.nan else np.nan)
+    df[column] = df[column].apply(lambda value: mapping_dict.get(value,value))
     return df
 
 #funcion para rellenar vacíos
